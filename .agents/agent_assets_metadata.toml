@@ -1,0 +1,92 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "3RRKCuaP4XkA3DSfkEwmS"
+uri = "file://attached_assets/generated_images/rynatyspace_tech_logo_full.png"
+type = "image"
+title = "RynatySpace Technologies — Full Wordmark Logo"
+
+[[outputs]]
+id = "B3INtXEQgA1b7rcjdjx4Y"
+uri = "file://attached_assets/generated_images/rynatyspace_tech_icon.png"
+type = "image"
+title = "RynatySpace Technologies — Icon Mark"
+
+[[outputs]]
+id = "naMg3GGNFN78QKGbAHGkw"
+uri = "file://attached_assets/generated_images/rynatyschool_logo_full.png"
+type = "image"
+title = "RynatySchool — Full Wordmark Logo"
+
+[[outputs]]
+id = "1b_CcibA1Kc1oWCd9_2UT"
+uri = "file://attached_assets/generated_images/rynatyschool_icon.png"
+type = "image"
+title = "RynatySchool — Icon Mark"
+
+[[outputs]]
+id = "u25kEmsx-NNNpkWiqMhoL"
+uri = "file://attached_assets/generated_images/rynatyspace_v2_full.png"
+type = "image"
+title = "RynatySpace Technologies — Full Logo + Motto: “Engineering Tomorrow. Today.”"
+
+[[outputs]]
+id = "yaqTJmGMGVzToJfWFgp-9"
+uri = "file://attached_assets/generated_images/rynatyspace_v2_icon.png"
+type = "image"
+title = "RynatySpace Technologies — Icon Mark"
+
+[[outputs]]
+id = "c3RBMNETlpXCM7u_LYDX0"
+uri = "file://attached_assets/generated_images/rynatyschool_v2_full.png"
+type = "image"
+title = "RynatySchool — Full Logo + Motto: “Empowering Every Mind. Every Future.”"
+
+[[outputs]]
+id = "smVLmdd8XWK_baAMVP0ZT"
+uri = "file://attached_assets/generated_images/rynatyschool_v2_icon.png"
+type = "image"
+title = "RynatySchool — Icon Mark"
+
+[[outputs]]
+id = "J1jEXoozXCruIXJYxFHAl"
+uri = "file://attached_assets/generated_images/rynatyschool_brand_banner.png"
+type = "image"
+title = "RynatySchool — Brand Name Launch Banner"
+
+[[outputs]]
+id = "wby9L4L_apD2HGAoBoL2w"
+uri = "file://attached_assets/generated_images/rynatyschool_brand_wordmark.png"
+type = "image"
+title = "RynatySchool — Horizontal Wordmark (App / Web Use)"
+
+[[outputs]]
+id = "LaEGY-s86liVQVQVxDeaX"
+uri = "file://attached_assets/generated_images/rynatyschool_brand_icon.png"
+type = "image"
+title = "RynatySchool — RS Monogram Icon (Favicon / App Icon)"
+
+[[outputs]]
+id = "gADbgFxvh8JjMaHVsA3sO"
+uri = "file://attached_assets/generated_images/rynatyspace_company_logo.png"
+type = "image"
+title = "RynatySpace Technologies Ltd. — Company Logo | “From Africa to The World.”"
+
+[[outputs]]
+id = "TEe2dxoq70IVoHo54CB8m"
+uri = "file://attached_assets/generated_images/rynatyspace_company_icon.png"
+type = "image"
+title = "RynatySpace Technologies Ltd. — Company Emblem"
+
+[[outputs]]
+id = "UjaP0OfYAfNJW0Jwoytz-"
+uri = "file://attached_assets/generated_images/rynatyschool_smartcampus_logo.png"
+type = "image"
+title = "RynatySchool SmartCampus — Product Logo | “Powering Smart Schools”"
+
+[[outputs]]
+id = "rqHRTcNmR99FZ2m0uYDY5"
+uri = "file://attached_assets/generated_images/rynatyschool_smartcampus_icon.png"
+type = "image"
+title = "RynatySchool SmartCampus — App Icon"
