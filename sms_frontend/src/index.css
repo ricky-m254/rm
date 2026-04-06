@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.75rem;
+    --brand-primary: #10b981;
+    --brand-secondary: #0ea5e9;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  * { @apply border-border; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    min-height: 100vh;
+    background-color: #070b12;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.25);
+    color: #ecfdf5;
+  }
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(100,116,139,0.25);
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(100,116,139,0.45); }
+
+/* ─── Keyframes ──────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+  50%      { box-shadow: 0 0 20px 2px rgba(16,185,129,0.18); }
+}
+@keyframes aurora {
+  0%,100% { opacity: 0.55; transform: translate(0,0) scale(1); }
+  25%     { opacity: 0.80; transform: translate(18px,-12px) scale(1.07); }
+  50%     { opacity: 0.45; transform: translate(-12px,16px) scale(0.93); }
+  75%     { opacity: 0.70; transform: translate(-18px,-4px) scale(1.03); }
+}
+@keyframes floatBob {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-5px); }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes sunRise {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes borderGlow {
+  0%,100% { border-color: rgba(16,185,129,0.25); }
+  50%     { border-color: rgba(16,185,129,0.6); }
+}
+@keyframes slideUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ─── Animation Classes ──────────────────────────────────── */
+.animate-fade-in-up     { animation: fadeInUp 0.35s ease-out both; }
+.animate-fade-in        { animation: fadeIn 0.25s ease-out both; }
+.animate-slide-in-right { animation: slideInRight 0.25s ease-out both; }
+.animate-slide-in-left  { animation: slideInLeft 0.25s ease-out both; }
+.animate-scale-in       { animation: scaleIn 0.25s ease-out both; }
+.animate-glow-pulse     { animation: glowPulse 2s ease-in-out infinite; }
+.animate-aurora         { animation: aurora 9s ease-in-out infinite; }
+.animate-float          { animation: floatBob 3.5s ease-in-out infinite; }
+.animate-gradient-shift { background-size: 200% 200%; animation: gradientShift 5s ease infinite; }
+.animate-rise           { animation: rise 0.5s ease-out both; }
+.animate-sun-rise       { animation: sunRise 0.7s ease-out both; }
+.animate-border-glow    { animation: borderGlow 2.5s ease-in-out infinite; }
+.animate-slide-up       { animation: slideUp 0.3s ease-out both; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-150 { animation-delay: 0.15s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ─── Skeleton Loader ────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(30,41,59,0.9) 25%,
+    rgba(51,65,85,0.45) 50%,
+    rgba(30,41,59,0.9) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 8px;
+}
+
+/* ─── Glass ──────────────────────────────────────────────── */
+.glass {
+  background: rgba(13,20,33,0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.glass-sm {
+  background: rgba(13,20,33,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+/* Lighter card glass — used by all sub-pages / list / form cards */
+.glass-panel {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.glass-panel-hover {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.15s, border-color 0.15s;
+}
+.glass-panel-hover:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.11);
+}
+
+/* ─── Font Display ───────────────────────────────────────── */
+.font-display {
+  font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* --- Dark Date / Datetime Inputs ---- */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="month"],
+input[type="week"] {
+  color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.75) sepia(0.2) hue-rotate(100deg) saturate(1.4);
+  cursor: pointer;
+  opacity: 0.65;
+  border-radius: 4px;
+  padding: 2px;
+  transition: opacity 0.15s;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  filter: invert(0.85) sepia(0.3) hue-rotate(100deg) saturate(2);
+}
+
+/* --- Premium Underline Tab Bar --- */
+.tab-bar {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.tab-btn {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: #cbd5e1; }
+.tab-btn.active { color: #10b981; }
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px 2px 0 0;
+}
+
+/* --- Pill Tab Bar --- */
+.pill-tab-bar {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  width: fit-content;
+}
+.pill-tab-btn {
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.pill-tab-btn:hover { color: #cbd5e1; background: rgba(255,255,255,0.04); }
+.pill-tab-btn.active {
+  color: #10b981;
+  background: rgba(16,185,129,0.12);
+  border-color: rgba(16,185,129,0.25);
+}
+
+/* ─── Gradient Text ──────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #10b981 0%, #38bdf8 55%, #a78bfa 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-sunrise {
+  background: linear-gradient(135deg, #f4b844 0%, #e88028 45%, #c75514 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-violet {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #4f46e5 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Aurora Sidebar Glow ────────────────────────────── */
+.aurora-blob-1 {
+  position: absolute; pointer-events: none;
+  top: -30px; left: -20px; width: 140px; height: 140px;
+  background: radial-gradient(circle, rgba(16,185,129,0.22) 0%, transparent 70%);
+  animation: aurora 10s ease-in-out infinite;
+}
+.aurora-blob-2 {
+  position: absolute; pointer-events: none;
+  top: 30px; right: -30px; width: 110px; height: 110px;
+  background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+  animation: aurora 13s ease-in-out infinite reverse;
+}
+.aurora-blob-3 {
+  position: absolute; pointer-events: none;
+  top: 80px; left: 20px; width: 90px; height: 90px;
+  background: radial-gradient(circle, rgba(56,189,248,0.14) 0%, transparent 70%);
+  animation: aurora 15s ease-in-out infinite 3s;
+}
+
+/* ─── Nav Active Styling ─────────────────────────────── */
+.nav-active-glow {
+  background: linear-gradient(90deg, rgba(16,185,129,0.12) 0%, rgba(16,185,129,0.04) 100%);
+  border: 1px solid rgba(16,185,129,0.2);
+  box-shadow: inset 3px 0 0 #10b981;
+}
+
+/* ─── Hero Banner Gradients (time-of-day) ────────────── */
+.hero-morning {
+  background:
+    linear-gradient(135deg,
+      rgba(28,9,6,0.82) 0%,
+      rgba(63,15,8,0.72) 20%,
+      rgba(122,32,8,0.55) 40%,
+      rgba(196,80,16,0.38) 60%,
+      rgba(240,160,52,0.18) 85%,
+      transparent 100%),
+    url('/hero-morning.jpg') center/cover no-repeat;
+}
+.hero-afternoon {
+  background:
+    linear-gradient(135deg,
+      rgba(2,29,60,0.80) 0%,
+      rgba(6,68,132,0.68) 22%,
+      rgba(10,107,187,0.50) 44%,
+      rgba(20,136,208,0.32) 65%,
+      rgba(58,171,223,0.14) 85%,
+      transparent 100%),
+    url('/hero-afternoon.jpg') center/cover no-repeat;
+}
+.hero-evening {
+  background:
+    linear-gradient(135deg,
+      rgba(7,4,26,0.88) 0%,
+      rgba(19,8,56,0.78) 20%,
+      rgba(34,16,106,0.62) 42%,
+      rgba(52,24,128,0.42) 62%,
+      rgba(74,32,160,0.22) 80%,
+      transparent 100%),
+    url('/hero-evening.jpg') center/cover no-repeat;
+}
+
+/* ─── KPI Card Glow Variants ─────────────────────────── */
+.kpi-sky    { background: linear-gradient(135deg, rgba(14,165,233,0.14) 0%, rgba(14,165,233,0.04) 100%); border: 1px solid rgba(14,165,233,0.28); }
+.kpi-violet { background: linear-gradient(135deg, rgba(139,92,246,0.14) 0%, rgba(139,92,246,0.04) 100%); border: 1px solid rgba(139,92,246,0.28); }
+.kpi-rose   { background: linear-gradient(135deg, rgba(244,63,94,0.14) 0%, rgba(244,63,94,0.04) 100%);  border: 1px solid rgba(244,63,94,0.28); }
+.kpi-emerald{ background: linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(16,185,129,0.04) 100%); border: 1px solid rgba(16,185,129,0.28); }
+.kpi-amber  { background: linear-gradient(135deg, rgba(245,158,11,0.14) 0%, rgba(245,158,11,0.04) 100%); border: 1px solid rgba(245,158,11,0.28); }
+
+/* ─── Mobile Touch Improvements ─────────────────────── */
+@media (hover: none) {
+  button, a { -webkit-tap-highlight-color: transparent; }
+  .hover\:scale-\[1\.02\]:hover { transform: none; }
+}
+
+/* ─── Capitalize Utility ─────────────────────────────── */
+.text-capitalize { text-transform: capitalize; }
